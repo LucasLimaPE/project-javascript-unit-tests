@@ -19,7 +19,7 @@
 Recebi ajuda na mentoria da Aninha para resolver esse requisito.
 */
 const vqv = (nome, idade) => {
-  if (nome === undefined && idade === undefined) {
+  if (nome === undefined) {
     return undefined;
   }
   let name = nome;
