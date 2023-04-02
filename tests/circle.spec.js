@@ -11,11 +11,7 @@ const circle = require("../src/circle");
 
 describe("4 - Implemente os casos de teste para a função `circle`", () => {
   it("Verifica se circle retorna undefined, caso o parâmetro passado não seja um número.", () => {
-<<<<<<< HEAD
     expect(circle("2")).toBeUndefined();
-=======
-    expect(circle("2")).toBe(undefined);
->>>>>>> 44a2a04b45b9531612095327a31da34d423213e4
   });
 
   it("Verifica se circle retorna um objeto.", () => {
@@ -27,11 +23,7 @@ describe("4 - Implemente os casos de teste para a função `circle`", () => {
   });
 
   it("Verifica se a função, quando não recebe nenhum parâmetro, retorna undefined.", () => {
-<<<<<<< HEAD
-    expect(circle()).toBeUndefined();
-=======
-    expect(circle()).toBe(undefined);
->>>>>>> 44a2a04b45b9531612095327a31da34d423213e4
+  expect(circle()).toBeUndefined();
   });
 
   it("Verifica se dentro do objeto retornado, a função retorna uma key com value igual a circunferência correta para um círculo de raio 2.", () => {
@@ -49,10 +41,7 @@ describe("4 - Implemente os casos de teste para a função `circle`", () => {
       circumference: 6.28,
     });
   });
-<<<<<<< HEAD
-=======
-  
->>>>>>> 44a2a04b45b9531612095327a31da34d423213e4
+
   it("Verifica se a função retorna, num objeto, os dados corretos de um círculo de raio 3.", () => {
     expect(circle(3)).toStrictEqual({
       radius: 3,
