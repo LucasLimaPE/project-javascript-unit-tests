@@ -9,7 +9,7 @@ describe("10 - Implemente os casos de teste e a função 'createMenu'", () => {
     myMenu = createMenu({
       food: { acaraje: 10, coxinha: 10.5 },
       drink: { agua: 5, refrigetante: 10.5 },
-    });
+    }); 
   });
 
   it("Verifica se o retorno da função createMenu() é um objeto que possui a chave fetchMenu, a qual tem como valor uma função.", () => {
@@ -18,7 +18,7 @@ describe("10 - Implemente os casos de teste e a função 'createMenu'", () => {
     expect(typeof createMenu().fetchMenu).toBe("function");
   });
 
-  it("Verifica se ao chamar a função createMenu com o parametro '{food: {}, drink: {}}, a chave fetchMenu, que é uma função, retorna um objeto cujas chaves são somente 'food' e 'drink'", () => {
+  it("Verifica se ao chamar a função createMenu com o parâmetro '{food: {}, drink: {}}, a chave fetchMenu, que é uma função, retorna um objeto cujas chaves são somente 'food' e 'drink'", () => {
     expect(Object.keys(returnedObject.fetchMenu()).length).toBe(2);
     expect(returnedObject.fetchMenu()).toHaveProperty("food");
     expect(returnedObject.fetchMenu()).toHaveProperty("drink");
@@ -38,21 +38,21 @@ describe("10 - Implemente os casos de teste e a função 'createMenu'", () => {
     expect(returnedObject.consumption).toStrictEqual(["coxinha"]);
   });
 
-  it("Verifica se ao dicionar três pedidos. dentre bebidas e comidas, o array 'returnedObject' contêm os itens pedidos", () => {
+  it("Verifica se ao adicionar três pedidos. dentre bebidas e comidas, o array 'returnedObject.consumption' contêm os itens pedidos", () => {
     returnedObject.order("coxinha");
     expect(returnedObject.consumption.includes("coxinha")).toBe(true);
     returnedObject.order("suco");
     expect(returnedObject.consumption.includes("suco")).toBe(true);
-    returnedObject.order("acarajé");
-    expect(returnedObject.consumption.includes("acarajé")).toBe(true);
+    returnedObject.order("acaraje");
+    expect(returnedObject.consumption.includes("acaraje")).toBe(true);
     expect(returnedObject.consumption).toStrictEqual([
       "coxinha",
       "suco",
-      "acarajé",
+      "acaraje",
     ]);
   });
 
-  it("Verifica se ai chamar 'returnedObject.pay()', retorna-se a soma dos preços de tudo que foi pedido conforme registado em returnedObject.", () => {
+  it("Verifica se ao chamar 'returnedObject.pay()', retorna-se a soma dos preços de tudo que foi pedido conforme registrado em 'returnedObject.consumption", () => {
     expect(myMenu.pay()).toBe(0);
     myMenu.order("coxinha");
     expect(myMenu.pay()).toEqual(10.5);
