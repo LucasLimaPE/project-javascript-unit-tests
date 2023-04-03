@@ -104,20 +104,22 @@ const createMenu = require("../src/restaurant");
 // ```
 // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
 
-
 describe("10 - Implemente os casos de teste e a função `createMenu`", () => {
+  const fetchMenuReturn = createMenu({ food: {}, drink: {} }).fetchMenu();
 
   it("Verifica se o retorno da função createMenu() é um objeto que possui a chave fetchMenu, a qual tem como valor uma função.", () => {
     expect(createMenu()).toHaveProperty("fetchMenu");
     expect(typeof createMenu()).toBe("object");
     expect(typeof createMenu().fetchMenu).toBe("function");
   });
-// TESTE 2: Verifique se 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`,
-// considerando que a função createMenu() foi chamada com o objeto: `{ food: {}, drink: {} }`.
-    it("Verifica se ao chamar a função createMenu com o parametro '{food: {}, drink: {}}, a chave fetchMenu, que é uma função, retorna um objeto cujas chaves são somente 'food' e 'drink'", () => {
-    const fetchMenuReturn = createMenu({ food: {}, drink: {} }).fetchMenu();
+
+  it("Verifica se ao chamar a função createMenu com o parametro '{food: {}, drink: {}}, a chave fetchMenu, que é uma função, retorna um objeto cujas chaves são somente 'food' e 'drink'", () => {
     expect(Object.keys(fetchMenuReturn).length).toBe(2);
-    expect(fetchMenuReturn).toHaveProperty('food');
-    expect(fetchMenuReturn).toHaveProperty('drink');
+    expect(fetchMenuReturn).toHaveProperty("food");
+    expect(fetchMenuReturn).toHaveProperty("drink");
+  });
+
+  it("Verifica se ao chamar a função createMenu com o parametro '{food: {}, drink: {}}, a chave fetchMenu, que é uma função, retorna um objeto identico ao que foi passado como parâmetro", () => {
+    expect(fetchMenuReturn).toStrictEqual({ food: {}, drink: {} });
   });
 });
